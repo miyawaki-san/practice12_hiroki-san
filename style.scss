@@ -1,0 +1,789 @@
+// compileExpanded: style.css
+
+// 297px=375px
+//*----------------------------------------*//
+//*
+//*  関数、定数の定義
+//*
+//*----------------------------------------*//
+
+//*----------------------------------------*
+//*  フォントサイズ設定 (px->rem)
+//*----------------------------------------*
+
+@mixin rem($size) {
+  font-size: $size + px; /*IE9以前に対応する*/
+  font-size: ($size / 16) + rem;
+}
+
+//*----------------------------------------*
+//*  ブレークポイント設定
+//*----------------------------------------*
+
+$breakpoints: (
+  "xs": (
+    min-width: 0,
+  ),
+  "sm": (
+    min-width: 560px,
+  ),
+  "md": (
+    min-width: 768px,
+  ),
+  "lg": (
+    min-width: 960px,
+  ),
+  "xl": (
+    min-width: 1024px,
+  ),
+  "xxl": (
+    min-width: 1400px,
+  ),
+) !default;
+
+//*----------------------------------------*
+//*  レスポンシブ設定
+//*----------------------------------------*
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // マップ型で定義されていない値が呼び出された時はエラーを返す
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+//*----------------------------------------*
+//*  カラー定数の設定
+//*----------------------------------------*
+$colorGreen: #006e60;
+$colorGray: #333;
+$colorBrown: #f7f6f5;
+$colorOrange: #e19324;
+$colorWhite: #fff;
+$colorBrown2: #e5dbc6;
+
+//*----------------------------------------*//
+//*
+//*  全体設定
+//*
+//*----------------------------------------*//
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: $colorBrown;
+  color: $colorGray;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    Meiryo, sans-serif;
+  font-feature-settings: "palt";
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.sectionWrapper {
+  margin: 0 auto;
+  padding: 40px 20px 40px;
+}
+@include responsive(lg) {
+  .sectionWrapper {
+    padding: 80px 7.33333% 100px;
+  }
+}
+
+.sectionTitle {
+  font-weight: 600;
+  @include rem(20);
+  letter-spacing: .15em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.englishSectionTitle {
+  color: #aa8f7b;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  @include rem(14);
+  letter-spacing: .05em;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+//*----------------------------------------*//
+//*
+//*  個別設定
+//*
+//*----------------------------------------*//
+
+//*----------------------------------------*
+//*  hedder
+//*----------------------------------------*
+
+.header {
+  background-color: #fff;
+  margin: 0 auto;
+  // padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  // padding-top: 22px;
+}
+
+.open.header {
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+}
+
+.headerContainer {
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 200;
+}
+
+.open .headerInner {
+  flex-direction: column;
+}
+
+.burgerBtnArea {
+  cursor: pointer;
+  height: 16px;
+  width: 24px;
+}
+.burgerBtn {
+  background-color: #333;
+  display: block;
+  height: 2px;
+  position: absolute;
+  // position: relative;
+  right: 0;
+  // right: 0;
+  top: 30px;
+  // top: 8px;
+  width: 20px;
+  &::before, &::after {
+    background-color: #333;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 0;
+  }
+  &::before {
+    top: -8px;
+    width: 24px;
+  }
+  &::after {
+    top: 8px;
+    width: 16px;
+  }
+}
+
+.open .burgerBtn {
+  background-color: rgba(0, 0, 0, 0);
+  // position: absolute;
+  // right: 20px;
+  // top: 20px;
+  transition: .3s;
+  z-index: 200;
+}
+
+.open .burgerBtn::before {
+  background-color: #fff;
+  opacity: 1;
+  transform: translate(0, 8px) rotate(-315deg);
+  transition: .3s;
+  width: 20px;
+}
+
+.open .burgerBtn::after {
+  background-color: #fff;
+  transform: translate(0, -8px) rotate(315deg);
+  transition: .3s;
+  width: 20px;
+}
+
+// .closeBtn {
+//   height: 20px; /*枠の大きさ*/
+//   margin-left: auto;
+//   // display: none;
+//   opacity: 0;
+//   // opacity: 0;
+//   position: fixed;
+//   right: 23px;
+//   top: 27px;
+//   transition: .3s;
+//   width: 20px;
+
+//   &::before, &::after {
+//     background-color: #fff;
+//     content: "";
+//     display: block;
+//     height: 2px;
+//     left: 0;
+//     width: 25px;
+//   }
+//   &::before {
+//     transform: translate(0, 2px) rotate(45deg);
+//   }
+//   &::after {
+//     transform: rotate(-45deg);
+//   }
+// }
+
+// .open .closeBtn {
+//   // display: block;
+//   // position: fixed;
+//   opacity: 1;
+//   z-index: 200;
+// }
+
+.open .overlay {
+  background: #978374;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  // z-index: 150;
+  top: 0;
+  transition: .3s;
+  width: 100%;
+}
+
+.header__logo {
+  fill: #fff;
+  transition: .3s;
+  z-index: 200;
+}
+
+.open.header__logo {
+  fill: #fff;
+  z-index: 200;
+}
+
+.headerLogoArea {
+  align-items: center;
+  display: flex;
+  fill: currentColor;
+  height: 61px;
+}
+
+#logo.svg {
+  fill: red;
+}
+
+.headerMenu {
+  color: #fff;
+  display: none;
+  font-weight: bold;
+  opacity: 0;
+  // position: fixed;
+  // top: 61px;
+  width: 100%;
+  &__item {
+    border-top: #aa8f7b 1px solid;
+    @include rem(16);
+    letter-spacing: .05;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  &__item:not(:last-child) {
+    padding-left: 10px;
+  }
+  &__item:last-child {
+    font-size: 0; //ボタン間の隙間をなくす
+  }
+  &__btn {
+    color: #fff;
+    display: inline-block;
+    font-family: "Quicksand", sans-serif;
+    @include rem(15);
+    line-height: 60px;
+    padding-left: 11px;
+    padding-right: 11px;
+    text-align: center;
+    width: 168px;
+
+    &--onlinestore {
+      background-color: #24a2b3;
+      &::before {
+        background-image: url("img/icon_onlinestore.svg");
+        background-position: bottom;
+        color: #fff;
+        content: "";
+        display: inline-block;
+        height: 17px;
+        margin-right: 10px;
+        width: 17px;
+      }
+    }
+    &--contact {
+      background-color: #aa8f7b;
+      &::before {
+        background-image: url("img/icon_contact.svg");
+        background-position: bottom;
+        content: "";
+        display: inline-block;
+        height: 17px;
+        width: 17px;
+      }
+    }
+  }
+}
+
+.arrowIcon {
+  position: relative;
+  &::before, &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    border-top: 1px solid;
+    height: 7px;
+    transform: rotate(45deg) translate(-3px, -2px);
+    width: 7px;
+  }
+  &::after {
+    height: 1px;
+    width: 20px;
+  }
+}
+
+.arrowIcon--menu {
+  &::before, &::after {
+    right: 0;
+    top: 50%;
+  }
+  &::before {
+    border-color: #fff;
+  }
+  &::after {
+    background-color: #fff;
+  }
+}
+
+.arrowIcon--shop {
+  &::before, &::after {
+    right: -30px;
+    top: 20px;
+  }
+  &::before {
+    border-color: #333;
+  }
+  &::after {
+    background-color: #333;
+  }
+}
+
+.open .headerMenu {
+  display: block;
+  opacity: 1;
+  z-index: 200;
+}
+
+//*  responsive(xl)
+@include responsive(xl) {
+  .header {
+    padding: 0;
+  }
+  .headerLogoArea {
+    padding-left: 40px;
+  }
+  .burgerBtn, .burgerBtnArea {
+    display: none;
+  }
+  .headerInner {
+    align-items: center;
+  }
+  .headerMenu {
+    align-items: center;
+    color: $colorGray;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    width: 870px;
+    &__item {
+      border-top: none;
+      padding: 0;
+      &:not(:last-child) {
+        padding-left: 0;
+      }
+    }
+  }
+  .arrowIcon {
+    &::before, &::after {
+      width: 0;
+    }
+  }
+  .headerMenu__btn {
+    line-height: 80px;
+    width: 195px;
+  }
+}
+
+//*----------------------------------------*
+//*  mainVisual
+//*----------------------------------------*
+.main {
+  background-color: red;
+}
+
+.mainVisual {
+  position: relative;
+  &__message {
+    color: #fff;
+    font-family: "Noto Serif JP", sans-serif;
+    font-weight: 500;
+    @include rem(24);
+    left: 30px;
+    letter-spacing: .2em;
+    line-height: 36px;
+    position: absolute;
+    top: 100px;
+  }
+}
+
+.slider {
+  // height: 360px;
+  position: relative;
+  z-index: -1;
+  &__img {
+    height: 360px; //q_100%で指定できない。
+    // object-fit: cover;
+    width: 100%;
+  }
+}
+
+@include responsive(xl) {
+  .slider__img {
+    height: 610px;
+    width: 100%;
+  }
+}
+//*----------------------------------------*
+//*  news
+//*----------------------------------------*
+.newsWrapper {
+  background-color: #fcfcfc;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  top: -50px;
+  width: 89.3%;
+}
+
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.news {
+  &__article {
+    margin-bottom: 30px;
+  }
+  &__inner {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  &__date {
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    letter-spacing: .05em;
+    margin-right: 20px;
+  }
+  &__classification {
+    background-color: #24a2b3;
+    color: #fff;
+    @include rem(11);
+    letter-spacing: .05em;
+    line-height: 20px;
+    padding-left: 11px;
+    padding-right: 11px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  &__details {
+    font-weight: 500;
+    @include rem(14);
+    letter-spacing: .05em;
+    line-height: 24px;
+  }
+}
+
+.detailsBtn {
+  border: #000 2px solid;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  @include rem(14);
+  letter-spacing: .1em;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  width: 220px;
+}
+
+@include responsive(xl) {
+  .newsWrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 64%;
+  }
+  .newsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .news {
+    &__article {
+      width: 40%;
+    }
+  }
+}
+
+//*----------------------------------------*
+//*  furniture
+//*----------------------------------------*
+.furniture {
+  background-color: #fff;
+}
+.furnitureContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.furniture {
+  &__howToFind {
+    font-weight: 500;
+    @include rem(20);
+    letter-spacing: .05em;
+    margin-bottom: 40px;
+    margin-top: 28px;
+  }
+  &__details {
+    font-weight: 400;
+    @include rem(15);
+    letter-spacing: .05em;
+    line-height: 30px;
+    margin-bottom: 60px;
+  }
+  &__img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@include responsive(sm) {
+  .furnitureWrapper {
+    padding: 80px 7.33333%;
+  }
+  .furnitureTextWrapper .detailsBtn {
+    margin-left: 0;
+  }
+  .furnitureContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .furnitureContainer:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .furnitureTextWrapper {
+    width: 48%;
+  }
+  .furniture {
+    &__howToFind {
+      @include rem(24);
+    }
+    &__img {
+      width: 48%;
+    }
+  }
+}
+
+@include responsive(lg) {
+  .furnitureContainer--3column {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+  }
+  .furnitureContainer--3column .furnitureContainer {
+    flex-direction: column;
+    width: 29.7%;
+  }
+  .furnitureContainer--3column .furnitureTextWrapper {
+    width: 100%;
+  }
+  .furnitureContainer--3column .furniture__img {
+    width: 100%;
+  }
+  .furnitureContainer--3column .detailsBtn {
+    margin: 0 auto;
+  }
+}
+//*----------------------------------------*
+//*  shop
+//*----------------------------------------*
+.shop {
+  background-color: #f7f6f5;
+}
+
+.shop__title {
+  font-weight: 500;
+  @include rem(20);
+  letter-spacing: .05em;
+  margin-bottom: 29px;
+  margin-top: 29px;
+}
+.shop__text {
+  font-weight: 400;
+  @include rem(15);
+  letter-spacing: .05em;
+  line-height: 2em;
+  margin-bottom: 39px;
+}
+.shop__link {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.shopContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@include responsive(lg) {
+  .shopContainer {
+    flex-direction: row;
+  }
+  .shop__title {
+    margin-top: 0;
+  }
+  .shop__img {
+    height: 200px;
+    margin-right: 70px;
+    width: 375px;
+  }
+}
+
+//*----------------------------------------*
+//*  recruit
+//*----------------------------------------*
+.recruit {
+  background-image: url(img/recruit_bg-desktop.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  &__detail {
+    letter-spacing: .2em;
+    line-height: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@include responsive(lg) {
+  .recruit {
+    &__detail {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.recruit .englishSectionTitle {
+  color: #fff;
+}
+
+.recruit .detailsBtn {
+  border-color: #fff;
+}
+
+@include responsive(lg) {
+  .recruit {
+    // background-image: url(img/recruit_bg-desktop.jpg);
+  }
+}
+
+//*----------------------------------------*
+//*  footer
+//*----------------------------------------*
+.footer {
+  background-color: #292929;
+  color: $colorWhite;
+
+  &__logo {
+    margin-bottom: 20px;
+  }
+  &__navItem {
+    border-bottom: 1px solid #555;
+  }
+}
+
+.overview {
+  text-align: center;
+  &__adress {
+    @include rem(14);
+    letter-spacing: .05em;
+    line-height: 2em;
+    margin-bottom: 30px;
+  }
+  &__tel {
+    border-bottom: 1px #555 solid;
+    font-family: "Quicksand", sans-serif;
+    @include rem(24);
+    letter-spacing: .05em;
+    line-height: 1em;
+    margin-bottom: 30px;
+    &::before {
+      content: "TEL.";
+      @include rem(20);
+      margin-right: 10px;
+    }
+  }
+}
+
+//*----------------------------------------*//
+//*
+//*  responsive(lg)
+//*
+//*----------------------------------------*//
+
+//*----------------------------------------*//
+//*
+//*  responsive(md)
+//*
+//*----------------------------------------*//
+
+//*----------------------------------------*//
+//*
+//*  responsive(sm)
+//*
+//*----------------------------------------*//

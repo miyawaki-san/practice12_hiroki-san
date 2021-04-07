@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <title>KAGU</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header id="header" class="header">
+      <div class="headerContainer">
+        <div class="overlay"></div>
+
+        <div class="headerInner">
+          <div class="headerLogoArea">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="109"
+              height="19"
+              viewBox="0 0 109 19"
+              class="header__logo"
+            >
+              <image
+                id="logo.svg"
+                width="109"
+                height="19"
+                xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAATCAYAAACa0IPnAAAElklEQVRoge2ZeYhVVRzHPzOlbTZMU2aRlYaVSIUURROYUTgRtlgWtElBQbZOG1iBpRVF00YLttIiNmhGiBVTf4wzklYGLWK0TxEVVFMWZqWSGT/ud/LO/Z27vPvePCr8wGXmnd/vnHfu+Z3zW85rGDf/JbbxDw2Jpdjyb1yaRmCNJpd85jjtMGcCvwb6DzxLgT2CPfM5PzDe9TV47x2Ak4H7gBXATxr7r8RjbWuBXuAh4AxgFzfaYJYE5rxFY1TCnMAY9ry5fRUvPhzoANqdJOI34BrgCScpxgTg0YDmnTZxYKWT5NMEzAIuBXYr2Mf0Juu5AlgPzAfuAL512nWgseRX7AsszzDYW8DEKgxmu3lxyq62jbaoxOltBT4CbqrAYCFGAJcBHwMXBORDTpmT1gZ0Ars7CWwGbtUu/NNJi/OITloa+wDPASfJneVhY70G7Jqi96U2yXvAd8AmGXY8MEXvnIx3ZrxntLHmuRGHkEqMth0wG7g58ALG58B5wNtOUhkXAzMK9GjTqbndSTwdGQazMe5KMf4rwL3yGmbUkU4DbgFelLHrQlGjjdTOnuIkEY8D18nfV8NEBfwkPytGjk60z1V863Y9tmIh4ETXGtGtGJnH+8CBOTp1o0hMa5XbCBmsHzgVuKQGBmvSbt7RSaLEYUYgBW/UZtrb9Rg8btrm/MC1/AdIexnkAq8G7s7QsxPwoWstx1PAuEDPTiUexv3AtQn5KGAhcLxiai1o1rsXxRKvV+tl7jRjGFcWyLIO0oRP0d+yXAVMD/T9Brg89tnij8WyQxJ6xwK3SV4LmhWrivJAPY2W5R6LpsWWei8DTneSYhwF3JOiaSn1L7HPG1Vwb3KacKOyyf89WUaLs1lB/zjdECTZCXihQpditADPA8OcJHKFy1wrrFYGG2IBsF+gvVIsPj+beBYWHCOUhdaULPc4QJ9294D7OwboAsYm9Bq10GOUSebFlwYtyv5OEsXJLFdnJ3MqMCnR3qL4Nzl2Gje43ltpdi0RPwIXJtosITvbaUbE0/0fnDRilGvJZq8U6Ya8k/ak0vB4vPoEOBp4x2lHtOv07Owkg5ml+78QwxUjelOe7pTiHs2tI/6SOp0hztHdaR5jcgrortj/K5w0Yryu9YowKaNWXWW3/GsCgd14MOOaChllUcbCr1KC0u8k0aR6VLAPFdNV9KLkpSsjHFhJ87Iuz/t1Skcom7UkZ5oumUM8BsyMtZv3ehc4NKCL6soF2vRfA79rbDuJhwGn6WI6NNd1Nm6W0eYWuOm3RX84Mek4Xyg5+DTWtqeK1azaqhbYCx4u926cBTydcp9ZlnnKfJOhYLQ2SWhdy7JWxlxezS0/mqwVvl+l3CwcALyh3bNSRu5MMdh6bZIytdYNgZjRpOSoVS5yseYyW64nz31n0aMSoydFx0qVI1VTtmujluUPxX5bm+9tjGpPWpxzdYEaygQ3aqEmZIx5kQrsMkyVewuRdF/I9bUpGz5C8aYl0BddfPfJdb6u+8g+p5XOMBX+J6i8OTgjyUAlzmdyn706seviCtt+ufbEL8OH+pfryr8L+Bu0gggHjue0XwAAAABJRU5ErkJggg=="
+              />
+            </svg>
+          </div>
+          <nav>
+            <ul class="headerMenu">
+              <li class="headerMenu__item arrowIcon arrowIcon--menu">
+                取扱い家具
+              </li>
+              <li class="headerMenu__item arrowIcon arrowIcon--menu">
+                販売店・展示場一覧
+              </li>
+              <li class="headerMenu__item arrowIcon arrowIcon--menu">
+                採用情報
+              </li>
+              <li class="headerMenu__item arrowIcon arrowIcon--menu">
+                お知らせ
+              </li>
+              <li class="headerMenu__item">
+                <span class="headerMenu__btn headerMenu__btn--onlinestore">
+                  ONLINE STORE
+                </span>
+                <span class="headerMenu__btn headerMenu__btn--contact">
+                  お問い合わせ
+                </span>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="burgerBtnArea">
+            <div class="burgerBtn"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="closeBtn"></div> -->
+    </header>
+
+    <main>
+      <!-- mainVisual -->
+      <div class="mainVisual">
+        <h1 class="mainVisual__message">自分らしさを<br />レイアウトする</h1>
+        <ul class="slider">
+          <li class="slider__img"><img src="img/bg_hero_01.jpg" alt="" /></li>
+          <li class="slider__img"><img src="img/bg_hero_02.jpg" alt="" /></li>
+          <li class="slider__img"><img src="img/bg_hero_03.jpg" alt="" /></li>
+        </ul>
+      </div>
+
+      <!-- news -->
+      <section class="news newsWrapper">
+        <h2 class="sectionTitle">お知らせ</h2>
+        <p class="englishSectionTitle">NEWS</p>
+        <div class="newsContainer">
+          <div class="news__article">
+            <div class="news__inner">
+              <p class="news__date">2020.01.28</p>
+              <p class="news__classification">ニュースリリース</p>
+            </div>
+            <p class="news__details">
+              「KAGU FANTASIA」が2020年 X月X日（月）東京・原宿にオープン
+            </p>
+          </div>
+          <div class="news__article">
+            <div class="news__inner">
+              <p class="news__date">2020.01.12</p>
+              <p class="news__classification">ニュースリリース</p>
+            </div>
+            <p class="news__details">新春キャンペーンを実施</p>
+          </div>
+          <div class="news__article">
+            <div class="news__inner">
+              <p class="news__date">2019.12.26</p>
+              <p class="news__classification">お知らせ</p>
+            </div>
+            <p class="news__details">年末年始の営業日についてのお知らせ</p>
+          </div>
+          <div class="news__article">
+            <div class="news__inner">
+              <p class="news__date">2019.11.09</p>
+              <p class="news__classification">ニュースリリース</p>
+            </div>
+            <p class="news__details">
+              人気ライフスタイル雑誌『KAGUGU』とのコラボ商品が登場
+            </p>
+          </div>
+        </div>
+        <a href="#"><p class="detailsBtn">お知らせ一覧へ</p></a>
+      </section>
+
+      <!-- furniture -->
+      <section class="furniture sectionWrapper">
+        <h2 class="sectionTitle">取扱い家具</h2>
+        <p class="englishSectionTitle">FURNITURE</p>
+        <div class="furnitureContainer">
+          <img src="img/img_furniture_01.jpg" alt="" class="furniture__img" />
+          <div class="furnitureTextWrapper">
+            <h2 class="furniture__howToFind">テーマで探す</h2>
+            <p class="furniture__details">
+              モダン、ナチュラル、北欧、ヴィンテージ、和風、ハワイアン、アメリカン、ミニマルなど、テーマごとに家具をお探しいただけます。
+            </p>
+            <a href="#"><p class="detailsBtn">取扱い家具の一覧へ</p></a>
+          </div>
+        </div>
+        <div class="furnitureContainer">
+          <img src="img/img_furniture_02.jpg" alt="" class="furniture__img" />
+          <div class="furnitureTextWrapper">
+            <h2 class="furniture__howToFind">カラーで探す</h2>
+            <p class="furniture__details">
+              レッド、ブルー、グリーン、イエロー、オレンジ、ピンク、パープル、ベージュ・アイボリー、ブラウン、ブラック、グレー、ホワイトなど、好みのカラーごとに家具をお探しいただけます。
+            </p>
+            <a href="#"><p class="detailsBtn">取扱い家具の一覧へ</p></a>
+          </div>
+        </div>
+        <div class="furnitureContainer--3column">
+          <div class="furnitureContainer">
+            <img src="img/img_furniture_03.jpg" alt="" class="furniture__img" />
+            <div class="furnitureTextWrapper">
+              <h2 class="furniture__howToFind">シーンで探す</h2>
+              <p class="furniture__details">
+                「リビング」や「ダイニング」、「寝室・ベッドルーム」、「キッチン」、「玄関・エントランス」、「書斎・ホームオフィス」などのシーンから、それぞれのシーンで使用する家具をお探しいただけます。
+              </p>
+              <a href="#"><p class="detailsBtn">取扱い家具の一覧へ</p></a>
+            </div>
+          </div>
+          <div class="furnitureContainer">
+            <img src="img/img_furniture_04.jpg" alt="" class="furniture__img" />
+            <div class="furnitureTextWrapper">
+              <h2 class="furniture__howToFind">ブランドで探す</h2>
+              <p class="furniture__details">
+                他では出会いないソファやチェアが見つかります。<br />
+                当社ブランド以外でも、セレクトラインアップの中で多数のブランドをお取り扱いしております。
+              </p>
+              <a href="#"><p class="detailsBtn">取扱い家具の一覧へ</p></a>
+            </div>
+          </div>
+          <div class="furnitureContainer">
+            <img src="img/img_furniture_05.jpg" alt="" class="furniture__img" />
+            <div class="furnitureTextWrapper">
+              <h2 class="furniture__howToFind">素材で探す</h2>
+              <p class="furniture__details">
+                チークやパイン、マホガニーやウォールナットなどの木材から、ファブリックやラタンなどの布・繊維・ステンレスやロートアイアンのような金属まで、あらゆる素材を使用した家具を取り揃えております。
+              </p>
+              <a href="#"><p class="detailsBtn">取扱い家具の一覧へ</p></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- shop -->
+      <section class="shop sectionWrapper">
+        <div class="shopContainer">
+          <img src="img/shop_store.jpg" class="shop__img" alt="" />
+          <div class="shopInner">
+            <h2 class="shop__title">販売店・展示場一覧</h2>
+            <p class="shop__text">
+              KAGUの販売店をご覧いただけます。<br />
+              また、KAGUの家具は全国のショールームにてご覧いただけます。
+            </p>
+            <p class="shop__link arrowIcon arrowIcon--shop mb60">
+              販売店・展示場一覧を見る
+            </p>
+          </div>
+        </div>
+        <div class="shopContainer">
+          <img src="img/shop_onlinestore.jpg" class="shop__img" alt="" />
+          <div class="shopInner">
+            <h2 class="shop__title">ONLINE STORE</h2>
+            <p class="shop__text">
+              KAGUの家具はオンラインストアでもご購入いただけます。
+            </p>
+            <p class="shop__link arrowIcon arrowIcon--shop">
+              オンラインストアを見る
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- recruit -->
+      <section class="recruit sectionWrapper">
+        <h2 class="sectionTitle">採用情報</h2>
+        <p class="englishSectionTitle">RECRUIT</p>
+        <p class="recruit__detail">
+          KAGUの新卒・中途採用情報を掲載しております。<br />
+          アルバイト情報についても掲載しております。
+        </p>
+        <a href="#"><p class="detailsBtn">採用情報一覧へ</p></a>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer sectionWrapper">
+      <div class="overview">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="109"
+          height="17"
+          viewBox="0 0 109 17"
+          class="footer__logo"
+        >
+          <image
+            id="footer_logo.svg"
+            width="109"
+            height="17"
+            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAARCAYAAADXGCLsAAAEo0lEQVRYhd2Ze4hVVRSHv3GcUss0q3/MwrDXiCQZYQ+IoDB6UAQRRQSWlD0tKpIiBdFiwiythqIirIgwFYoe/0RgD5WCTMwUKsMeZq+xmkpN018szxrO7ax9zr1znRHrgw2XvR773LP3WnvvdVokbSTNXcCSpOTfnA88AgwKkoxlwG3Ab0FSn0uABQWtu4GXm/BVZBxwDnAq0A4cCRwOtLreduB34DtgLfAJ8C7wAbA7eMuZCVwbemEdcEHoLecy4KGkVOVMlkRFGyipo9Ra2i7pTkkDKnxUtTGSfglepT8ktVfYVbU2STdJWhe8Ns4mSbMkjSgZZ36Jp9UJ3ao2OXhwBoRZbIxRHkHTS7Q/Bk4B5tVZlWUMBpYCwxPyg1x2cJBUY9G0Guj0380y0qPpc4+Gfc7AJgacBLzoqaTILqADmAXsDNLGsRc7vkLbXvozwBVBkma0p7bUMxtdwKvAKuB7/x9DgeM9hZ4eLGAEsBi4Hng6SPuTEHs5xfTYKmmOpN1BM+MzSadVhHujbUrwXM60Bn0uLvUgzZM0KGFT2yZK+jZYZuzwVL7P0mOjkzZS0jtBI6dT0pDEwL1tE3wvLLJF0o+hN3th9RZKS4lP4/2E/t62/WJPm+R7wVlBkp2szgNuBrYGae841E+rByasppacyNrc5oggyRlW4hNPh/85qva0Vt+bZgAtQZqxGVgTenuP+X8eOCZh+ZzvHcYTwI0FuR3VX/LFsytYV1N2SLID0O2htxxb1K+USvuaEHs5P4eeNF9JGpcI7960e5OepQ2Shtb4sRS8PmhlzC4Zb3jQzJmf0Lc2OmhWs3B/OfIfFnrSHA0s9zTaDHY6m52ws6i52i+4PVgKvqrkZHofcGHo/R9SNWm1/Anc4NWP7iCFQ4A3gOuCpJpRntpSzzEHWBF6s31oRujNeKEkxfaWbq/E1LbHKnwo9PQnIfYiyyUdWxO2J0n6OmjlPOgntlTI1zarTqwI1hkrveKSssOrLMuCVcZHhSP8AUEjZ1HCd1k7OVjnPFBjc3+QZvxU5z8V28zgIWNr1aT9Jekev58VHdoVYFWwyFnSwBVgQbDKWe+TUtXWBqucpwpjrQwaGX9LmtpAqe04SWuCdc7EGt1zgzTnUV+sqTFqm11jfg3WGa9bRJSF9q3A46E3x8pJiyr2kQ+Bi4EfggQud9v+5Bpgofs/w8tubSXjfQO8Bnzqz2v76RBPtWf6ft0arDKeTJxo3/StJMWXviVY4XmTF9IHe7XmROAiLyynTuzb9lRnwjzm1CsY41HYGSxzNkoaW7Bp96Jvf7NN0vhCBGzuwzGtMjS3JBMNs4gIFntHl/8HqiKtdqXW4w5gbsmBotsLq295kddW2NiglV3Ub2liU7cV+bDXF4ts8MJ1z2chOzBN83rhUUG7MXb4nazDC+NltPj/nu7P0CxbgGd9vK49f7gPvqf1cKl//0mlkZ0+IWcDVwZpxhTg7dDbGJbCrIidwl5w8aJsL9RepD3PBOAEr95biqotONgVwwoI9o7se5pdbWzx9fbb4BhPsfbtzsaya5KNVfsN0i76NimWnr/wC/t73vIrDvAPV3gbQOtZyPIAAAAASUVORK5CYII="
+          />
+        </svg>
+        <p class="overview__adress">
+          株式会社KAGU<br />
+          愛知県名古屋市〇〇区〇〇町 XX-X
+        </p>
+        <p class="overview__tel">052-000-0000</p>
+      </div>
+      <div class="footer__navList">
+        <div class="footer__container">
+          <p class="footer__navItem">取扱い家具</p>
+          <div class="footer__inner">
+            <p class="footer__navItem">販売店・展示場一覧</p>
+            <p class="footer__navItem footer__navItem--sm">販売店一覧</p>
+            <p class="footer__navItem footer__navItem--sm">展示場一覧</p>
+          </div>
+        </div>
+        <div class="footer__container">
+          <p class="footer__navItem">採用情報</p>
+          <p class="footer__navItem">お知らせ</p>
+          <p class="footer__navItem">お問い合わせ</p>
+        </div>
+      </div>
+      <div class="copyRight">
+        <p class="copyRight__text">プライバシーポリシー</p>
+        <p class="copyRight__text">@ 2020 KAGU inc.</p>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <!-- <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    ></script>
+
+    <script type="text/javascript" src="common.js"></script>
+  </body>
+</html>
