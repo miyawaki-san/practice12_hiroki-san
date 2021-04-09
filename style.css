@@ -1,0 +1,811 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #f7f6f5;
+  color: #333;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.sectionWrapper {
+  margin: 0 auto;
+  padding: 40px 20px 40px;
+}
+
+@media screen and (min-width: 960px) {
+  .sectionWrapper {
+    padding: 80px 7.33333% 100px;
+  }
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  letter-spacing: .15em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.englishSectionTitle {
+  color: #aa8f7b;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: .05em;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.header {
+  background-color: #fff;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.open.header {
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+}
+
+.headerInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 200;
+}
+
+.open .headerInner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.burgerBtnArea {
+  cursor: pointer;
+  height: 16px;
+  width: 24px;
+}
+
+.burgerBtn {
+  background-color: #333;
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 20px;
+}
+
+.burgerBtn::before, .burgerBtn::after {
+  background-color: #333;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 0;
+}
+
+.burgerBtn::before {
+  top: -8px;
+  width: 24px;
+}
+
+.burgerBtn::after {
+  top: 8px;
+  width: 16px;
+}
+
+.open .burgerBtn {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 200;
+}
+
+.open .burgerBtn::before {
+  background-color: #fff;
+  opacity: 1;
+  -webkit-transform: translate(0, 8px) rotate(-315deg);
+          transform: translate(0, 8px) rotate(-315deg);
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 20px;
+}
+
+.open .burgerBtn::after {
+  background-color: #fff;
+  -webkit-transform: translate(0, -8px) rotate(315deg);
+          transform: translate(0, -8px) rotate(315deg);
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 20px;
+}
+
+.open .overlay {
+  background: #978374;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100%;
+}
+
+.header__logo {
+  fill: #fff;
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 200;
+}
+
+.open.header__logo {
+  fill: #fff;
+  z-index: 200;
+}
+
+.headerLogoArea {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  fill: currentColor;
+  height: 61px;
+}
+
+#logo.svg {
+  fill: red;
+}
+
+.headerMenu {
+  color: #fff;
+  display: none;
+  font-weight: bold;
+  opacity: 0;
+  width: 100%;
+}
+
+.headerMenu__item {
+  border-top: #aa8f7b 1px solid;
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  letter-spacing: .05;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.headerMenu__item:not(:last-child) {
+  padding-left: 10px;
+}
+
+.headerMenu__item:last-child {
+  font-size: 0;
+}
+
+.headerMenu__btn {
+  color: #fff;
+  display: inline-block;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  /*IE9以前に対応する*/
+  font-size: 0.9375rem;
+  line-height: 60px;
+  padding-left: 11px;
+  padding-right: 11px;
+  text-align: center;
+  width: 168px;
+}
+
+.headerMenu__btn--onlinestore {
+  background-color: #24a2b3;
+}
+
+.headerMenu__btn--onlinestore::before {
+  background-image: url("img/icon_onlinestore.svg");
+  background-position: bottom;
+  color: #fff;
+  content: "";
+  display: inline-block;
+  height: 17px;
+  margin-right: 10px;
+  width: 17px;
+}
+
+.headerMenu__btn--contact {
+  background-color: #aa8f7b;
+}
+
+.headerMenu__btn--contact::before {
+  background-image: url("img/icon_contact.svg");
+  background-position: bottom;
+  content: "";
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+}
+
+.arrowIcon::before, .arrowIcon::after {
+  content: "";
+}
+
+.arrowIcon::before {
+  border-top: 1px solid;
+  height: 7px;
+  -webkit-transform: rotate(45deg) translate(-3px, -2px);
+          transform: rotate(45deg) translate(-3px, -2px);
+  width: 7px;
+}
+
+.arrowIcon::after {
+  height: 1px;
+  width: 20px;
+}
+
+.arrowIcon--menu {
+  position: relative;
+}
+
+.arrowIcon--menu::before, .arrowIcon--menu::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.arrowIcon--menu::before {
+  border-color: #fff;
+}
+
+.arrowIcon--menu::after {
+  background-color: #fff;
+}
+
+.arrowIcon--shop {
+  position: relative;
+}
+
+.arrowIcon--shop::before, .arrowIcon--shop::after {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+}
+
+.arrowIcon--shop::before {
+  border-color: #333;
+}
+
+.arrowIcon--shop::after {
+  background-color: #333;
+}
+
+.open .headerMenu {
+  display: block;
+  opacity: 1;
+  z-index: 200;
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 0;
+  }
+  .headerLogoArea {
+    padding-left: 40px;
+  }
+  .burgerBtn, .burgerBtnArea {
+    display: none;
+  }
+  .headerInner {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .headerMenu {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    opacity: 1;
+    width: 870px;
+  }
+  .headerMenu__item {
+    border-top: none;
+    padding: 0;
+  }
+  .headerMenu__item:not(:last-child) {
+    padding-left: 0;
+  }
+  .arrowIcon::before, .arrowIcon::after {
+    width: 0;
+  }
+  .headerMenu__btn {
+    line-height: 80px;
+    width: 195px;
+  }
+}
+
+.main {
+  background-color: red;
+}
+
+.mainVisual {
+  position: relative;
+}
+
+.mainVisual__message {
+  color: #fff;
+  font-family: "Noto Serif JP", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  left: 30px;
+  letter-spacing: .2em;
+  line-height: 36px;
+  position: absolute;
+  top: 100px;
+}
+
+.slider {
+  position: relative;
+  z-index: -1;
+}
+
+.slider__img {
+  height: 360px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .slider__img {
+    height: 610px;
+    width: 100%;
+  }
+}
+
+.newsWrapper {
+  background-color: #fcfcfc;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  top: -50px;
+  width: 89.3%;
+}
+
+.newsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.news__article {
+  margin-bottom: 30px;
+}
+
+.news__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.news__date {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  margin-right: 20px;
+}
+
+.news__classification {
+  background-color: #24a2b3;
+  color: #fff;
+  font-size: 11px;
+  /*IE9以前に対応する*/
+  font-size: 0.6875rem;
+  letter-spacing: .05em;
+  line-height: 20px;
+  padding-left: 11px;
+  padding-right: 11px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.news__details {
+  font-weight: 500;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: .05em;
+  line-height: 24px;
+}
+
+.detailsBtn {
+  border: #000 2px solid;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: .1em;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  width: 220px;
+}
+
+@media screen and (min-width: 1024px) {
+  .newsWrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 64%;
+  }
+  .newsContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .news__article {
+    width: 40%;
+  }
+}
+
+.furniture {
+  background-color: #fff;
+}
+
+.furnitureContainer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.furniture__howToFind {
+  font-weight: 500;
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+  margin-bottom: 40px;
+  margin-top: 28px;
+}
+
+.furniture__details {
+  font-weight: 400;
+  font-size: 15px;
+  /*IE9以前に対応する*/
+  font-size: 0.9375rem;
+  letter-spacing: .05em;
+  line-height: 30px;
+  margin-bottom: 60px;
+}
+
+.furniture__img {
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 560px) {
+  .furnitureWrapper {
+    padding: 80px 7.33333%;
+  }
+  .furnitureTextWrapper .detailsBtn {
+    margin-left: 0;
+  }
+  .furnitureContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .furnitureContainer:nth-child(even) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .furnitureTextWrapper {
+    width: 48%;
+  }
+  .furniture__howToFind {
+    font-size: 24px;
+    /*IE9以前に対応する*/
+    font-size: 1.5rem;
+  }
+  .furniture__img {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .furnitureContainer--3column {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .furnitureContainer--3column .furnitureContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 29.7%;
+  }
+  .furnitureContainer--3column .furnitureTextWrapper {
+    width: 100%;
+  }
+  .furnitureContainer--3column .furniture__img {
+    width: 100%;
+  }
+  .furnitureContainer--3column .detailsBtn {
+    margin: 0 auto;
+  }
+}
+
+.shop {
+  background-color: #f7f6f5;
+}
+
+.shop__title {
+  font-weight: 500;
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+  margin-bottom: 29px;
+  margin-top: 29px;
+}
+
+.shop__text {
+  font-weight: 400;
+  font-size: 15px;
+  /*IE9以前に対応する*/
+  font-size: 0.9375rem;
+  letter-spacing: .05em;
+  line-height: 2em;
+  margin-bottom: 39px;
+}
+
+.shop__link {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.shopContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 960px) {
+  .shopContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .shop__title {
+    margin-top: 0;
+  }
+  .shop__img {
+    height: 200px;
+    margin-right: 70px;
+    width: 375px;
+  }
+}
+
+.recruit {
+  background-image: url(img/recruit_bg-desktop.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.recruit__detail {
+  letter-spacing: .2em;
+  line-height: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  .recruit__detail {
+    margin-bottom: 60px;
+  }
+}
+
+.recruit .englishSectionTitle {
+  color: #fff;
+}
+
+.recruit .detailsBtn {
+  border-color: #fff;
+}
+
+.footer {
+  background-color: #292929;
+  color: #fff;
+}
+
+.footer__logo {
+  margin-bottom: 20px;
+}
+
+.footer__navItem {
+  padding: 20px 0;
+  position: relative;
+}
+
+.footer__navItem::after {
+  background-color: #555;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  left: 50%;
+  letter-spacing: .05em;
+  overflow-x: hidden;
+  overflow-x: hidden;
+  position: absolute;
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+  width: 100vw;
+}
+
+.footer__navItem--large {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: .05em;
+  padding-bottom: 31px;
+}
+
+.footer__navItem--small {
+  font-size: 13px;
+  /*IE9以前に対応する*/
+  font-size: 0.8125rem;
+  letter-spacing: .05em;
+}
+
+.footer__navItem--small:first-of-type {
+  padding-bottom: 20px;
+}
+
+.footer__navItem--small:last-of-type {
+  padding-bottom: 10px;
+}
+
+.arrowIcon--footer::before, .arrowIcon--footer::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.arrowIcon--footer::before {
+  border-color: #fff;
+}
+
+.arrowIcon--footer::after {
+  background-color: #fff;
+}
+
+.overview {
+  text-align: center;
+}
+
+.overview__adress {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: .05em;
+  line-height: 2em;
+  margin-bottom: 30px;
+}
+
+.overview__tel {
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  letter-spacing: .05em;
+  line-height: 1em;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.overview__tel::before {
+  content: "TEL.";
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  margin-right: 10px;
+}
+
+.overview__tel::after {
+  background-color: #555;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-x: hidden;
+  position: absolute;
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+  width: 100vw;
+}
+/*# sourceMappingURL=style.css.map */
