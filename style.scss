@@ -782,9 +782,8 @@ li {
 }
 
 .arrowIcon--footer {
-  // position: relative;
   &::before, &::after {
-    position: absolute;
+    position: absolute;gi
     right: 0;
     top: 50%;
   }
