@@ -832,6 +832,16 @@ li {
   }
 }
 
+.copyRight {
+  @include rem(12);
+  letter-spacing: .05;
+  padding-top: 20px;
+  text-align: center;
+  &__text {
+    padding-top: 30px;
+  }
+}
+
 //*----------------------------------------*//
 //*
 //*  responsive(lg)
