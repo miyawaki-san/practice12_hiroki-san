@@ -808,4 +808,17 @@ li {
           transform: translateX(-50vw);
   width: 100vw;
 }
+
+.copyRight {
+  font-size: 12px;
+  /*IE9以前に対応する*/
+  font-size: 0.75rem;
+  letter-spacing: .05;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyRight__text {
+  padding-top: 30px;
+}
 /*# sourceMappingURL=style.css.map */
