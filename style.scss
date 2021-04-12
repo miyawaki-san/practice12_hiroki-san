@@ -740,6 +740,8 @@ li {
 .footer {
   background-color: #292929;
   color: $colorWhite;
+  display: flex;
+  flex-direction: column;
 
   &__logo {
     margin-bottom: 20px;
@@ -779,6 +781,9 @@ li {
       }
     }
   }
+}
+
+@include responsive(lg) {
 }
 
 .arrowIcon--footer {
