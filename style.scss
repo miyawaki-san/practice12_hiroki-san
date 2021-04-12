@@ -354,10 +354,8 @@ li {
 }
 
 .arrowIcon {
-  position: relative;
   &::before, &::after {
     content: "";
-    position: absolute;
   }
   &::before {
     border-top: 1px solid;
@@ -372,7 +370,9 @@ li {
 }
 
 .arrowIcon--menu {
+  position: relative;
   &::before, &::after {
+    position: absolute;
     right: 0;
     top: 50%;
   }
@@ -385,7 +385,9 @@ li {
 }
 
 .arrowIcon--shop {
+  position: relative;
   &::before, &::after {
+    position: absolute;
     right: -30px;
     top: 20px;
   }
@@ -743,7 +745,53 @@ li {
     margin-bottom: 20px;
   }
   &__navItem {
-    border-bottom: 1px solid #555;
+    padding: 20px 0;
+    position: relative;
+    // border-bottom: 1px solid #555;
+    &::after {
+      background-color: #555;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      @include rem(14);
+      left: 50%;
+      letter-spacing: .05em;
+      overflow-x: hidden;
+      overflow-x: hidden;
+      position: absolute;
+      transform: translateX(-50vw);
+      width: 100vw;
+    }
+    &--large {
+      @include rem(14);
+      letter-spacing: .05em;
+      padding-bottom: 31px;
+    }
+    &--small {
+      @include rem(13);
+      letter-spacing: .05em;
+      &:first-of-type {
+        padding-bottom: 20px;
+      }
+      &:last-of-type {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+.arrowIcon--footer {
+  &::before, &::after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+  &::before {
+    border-color: #fff;
+  }
+  &::after {
+    background-color: #fff;
   }
 }
 
@@ -756,16 +804,30 @@ li {
     margin-bottom: 30px;
   }
   &__tel {
-    border-bottom: 1px #555 solid;
+    // border-bottom: 1px #555 solid;
     font-family: "Quicksand", sans-serif;
     @include rem(24);
     letter-spacing: .05em;
     line-height: 1em;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
     &::before {
       content: "TEL.";
       @include rem(20);
       margin-right: 10px;
+    }
+    &::after {
+      background-color: #555;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 50%;
+      overflow-x: hidden;
+      overflow-x: hidden;
+      position: absolute;
+      transform: translateX(-50vw);
+      width: 100vw;
     }
   }
 }
