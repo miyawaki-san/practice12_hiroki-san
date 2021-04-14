@@ -223,41 +223,6 @@ li {
   width: 20px;
 }
 
-// .closeBtn {
-//   height: 20px; /*枠の大きさ*/
-//   margin-left: auto;
-//   // display: none;
-//   opacity: 0;
-//   // opacity: 0;
-//   position: fixed;
-//   right: 23px;
-//   top: 27px;
-//   transition: .3s;
-//   width: 20px;
-
-//   &::before, &::after {
-//     background-color: #fff;
-//     content: "";
-//     display: block;
-//     height: 2px;
-//     left: 0;
-//     width: 25px;
-//   }
-//   &::before {
-//     transform: translate(0, 2px) rotate(45deg);
-//   }
-//   &::after {
-//     transform: rotate(-45deg);
-//   }
-// }
-
-// .open .closeBtn {
-//   // display: block;
-//   // position: fixed;
-//   opacity: 1;
-//   z-index: 200;
-// }
-
 .open .overlay {
   background: #978374;
   cursor: pointer;
@@ -459,16 +424,17 @@ li {
     font-family: "Noto Serif JP", sans-serif;
     font-weight: 500;
     @include rem(24);
-    left: 30px;
+    // left: 30px;
     letter-spacing: .2em;
     line-height: 36px;
+    padding: 0 30px;
     position: absolute;
     top: 100px;
+    width: 240px;
   }
 }
 
 .slider {
-  // height: 360px;
   position: relative;
   z-index: -1;
   &__img {
@@ -478,7 +444,15 @@ li {
   }
 }
 
-@include responsive(xl) {
+@include responsive(lg) {
+  .mainVisual {
+    &__message {
+      @include rem(36);
+      letter-spacing: .2em;
+      padding: 0 7.33333%;
+      width: auto;
+    }
+  }
   .slider__img {
     height: 610px;
     width: 100%;
@@ -740,8 +714,6 @@ li {
 .footer {
   background-color: #292929;
   color: $colorWhite;
-  display: flex;
-  flex-direction: column;
 
   &__logo {
     margin-bottom: 20px;
@@ -780,6 +752,11 @@ li {
       }
     }
   }
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
 }
 
 .arrowIcon--footer {
@@ -833,42 +810,6 @@ li {
   }
 }
 
-@include responsive(lg) {
-  .footer {
-    flex-direction: row;
-    justify-content: space-between;
-    &__navItem {
-      padding-bottom: 25px;
-      padding-top: 0;
-      &::after {
-        display: none;
-      }
-      &--large {
-        padding-bottom: 18px;
-      }
-      &--small {
-        padding-bottom: 14px;
-      }
-    }
-  }
-  .arrowIcon--footer {
-    display: none;
-  }
-  .overview {
-    flex-basis: 74.2%;
-    text-align: left;
-    &__tel {
-      &::after {
-        display: none;
-      }
-    }
-  }
-}
-
-//*----------------------------------------*
-//*  footer
-//*----------------------------------------*
-
 .copyRight {
   background-color: #292929;
   color: #fff;
@@ -882,6 +823,60 @@ li {
     padding-top: 30px;
   }
 }
+
+@include responsive(lg) {
+  .footer {
+    &__navItem {
+      padding-bottom: 25px;
+      padding-top: 0;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+      &::after {
+        display: none;
+      }
+      &--large {
+        padding-bottom: 18px;
+      }
+      &--small {
+        padding-bottom: 14px;
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+  .footerInner {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 100px;
+  }
+  .arrowIcon--footer {
+    display: none;
+  }
+  .overview {
+    flex-basis: 74.2%;
+    text-align: left;
+    &__tel {
+      padding-bottom: 0;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .copyRight {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 0;
+    &__text {
+      padding-top: 0;
+    }
+  }
+}
+
+//*----------------------------------------*
+//*  footer
+//*----------------------------------------*
 
 //*------------------------------------s----*//
 //*
