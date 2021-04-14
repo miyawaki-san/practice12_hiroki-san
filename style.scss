@@ -424,13 +424,12 @@ li {
     font-family: "Noto Serif JP", sans-serif;
     font-weight: 500;
     @include rem(24);
-    // left: 30px;
     letter-spacing: .2em;
     line-height: 36px;
-    padding: 0 30px;
+    padding-left: 30px;
     position: absolute;
     top: 100px;
-    width: 240px;
+    width: 210px;
   }
 }
 
@@ -449,8 +448,8 @@ li {
     &__message {
       @include rem(36);
       letter-spacing: .2em;
-      padding: 0 7.33333%;
-      width: auto;
+      padding-left: 7.33333%;
+      width: 100%;
     }
   }
   .slider__img {
