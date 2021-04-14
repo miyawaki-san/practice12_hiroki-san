@@ -433,12 +433,25 @@ li {
   }
 }
 
-.slider {
+.slider--parmtop {
   position: relative;
   z-index: -1;
   &__img {
     height: 360px; //q_100%で指定できない。
-    // object-fit: cover;
+    object-fit: cover;
+    object-position: 70% 20%;
+    width: 100%;
+  }
+}
+
+.slider--desktop {
+  display: none;
+  position: relative;
+  z-index: -1;
+  &__img {
+    height: 360px; //q_100%で指定できない。
+    object-fit: cover;
+    object-position: 70% 20%;
     width: 100%;
   }
 }
@@ -451,6 +464,12 @@ li {
       padding-left: 7.33333%;
       width: 100%;
     }
+  }
+  .slider--parmtop {
+    display: none;
+  }
+  .slider--desktop {
+    display: block;
   }
   .slider__img {
     height: 610px;
