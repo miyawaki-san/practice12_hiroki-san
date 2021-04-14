@@ -424,22 +424,34 @@ li {
     font-family: "Noto Serif JP", sans-serif;
     font-weight: 500;
     @include rem(24);
-    // left: 30px;
     letter-spacing: .2em;
     line-height: 36px;
-    padding: 0 30px;
+    padding-left: 30px;
     position: absolute;
     top: 100px;
-    width: 240px;
+    width: 210px;
   }
 }
 
-.slider {
+.slider--parmtop {
   position: relative;
   z-index: -1;
   &__img {
     height: 360px; //q_100%で指定できない。
-    // object-fit: cover;
+    object-fit: cover;
+    object-position: 70% 20%;
+    width: 100%;
+  }
+}
+
+.slider--desktop {
+  display: none;
+  position: relative;
+  z-index: -1;
+  &__img {
+    height: 360px; //q_100%で指定できない。
+    object-fit: cover;
+    object-position: 70% 20%;
     width: 100%;
   }
 }
@@ -449,9 +461,15 @@ li {
     &__message {
       @include rem(36);
       letter-spacing: .2em;
-      padding: 0 7.33333%;
-      width: auto;
+      padding-left: 7.33333%;
+      width: 100%;
     }
+  }
+  .slider--parmtop {
+    display: none;
+  }
+  .slider--desktop {
+    display: block;
   }
   .slider__img {
     height: 610px;
