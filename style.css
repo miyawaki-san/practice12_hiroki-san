@@ -725,7 +725,6 @@ li {
   left: 50%;
   letter-spacing: .05em;
   overflow-x: hidden;
-  overflow-x: hidden;
   position: absolute;
   -webkit-transform: translateX(-50vw);
           transform: translateX(-50vw);
@@ -816,11 +815,56 @@ li {
   width: 100vw;
 }
 
+@media screen and (min-width: 960px) {
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer__navItem {
+    padding-bottom: 25px;
+    padding-top: 0;
+  }
+  .footer__navItem::after {
+    display: none;
+  }
+  .footer__navItem--large {
+    padding-bottom: 18px;
+  }
+  .footer__navItem--small {
+    padding-bottom: 14px;
+  }
+  .arrowIcon--footer {
+    display: none;
+  }
+  .overview {
+    -ms-flex-preferred-size: 74.2%;
+        flex-basis: 74.2%;
+    text-align: left;
+  }
+  .overview__tel::after {
+    display: none;
+  }
+}
+
 .copyRight {
+  background-color: #292929;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 12px;
   /*IE9以前に対応する*/
   font-size: 0.75rem;
-  letter-spacing: .05;
+  letter-spacing: .05em;
   padding-top: 20px;
   text-align: center;
 }
