@@ -22,7 +22,7 @@
 
 $breakpoints: (
   "xs": (
-    min-width: 0,
+    min-width: 375px,
   ),
   "sm": (
     min-width: 560px,
@@ -370,8 +370,8 @@ li {
   z-index: 200;
 }
 
-//*  responsive(xl)
-@include responsive(xl) {
+//*  responsive(lg)
+@include responsive(lg) {
   .header {
     padding: 0;
   }
@@ -436,23 +436,35 @@ li {
 .slider--parmtop {
   position: relative;
   z-index: -1;
-  &__img {
-    height: 360px; //q_100%で指定できない。
-    object-fit: cover;
-    object-position: 70% 20%;
-    width: 100%;
-  }
 }
 
 .slider--desktop {
-  display: none;
+  display: none !important;
   position: relative;
   z-index: -1;
-  &__img {
-    height: 360px; //q_100%で指定できない。
-    object-fit: cover;
-    object-position: 70% 20%;
-    width: 100%;
+}
+
+.slider__img {
+  // filter: ;
+  height: 360px; //q_100%で指定できない。
+  object-fit: cover;
+  object-position: 70% 20%;
+  width: 100%;
+}
+.imgMask {
+  background-color: #8c7665;
+  height: 100%;
+  opacity: .2;
+  position: absolute;
+  width: 100%;
+}
+
+@include responsive(xs) {
+  .slider--parmtop {
+    display: none !important;
+  }
+  .slider--desktop {
+    display: block !important;
   }
 }
 
@@ -462,15 +474,16 @@ li {
       @include rem(36);
       letter-spacing: .2em;
       padding-left: 7.33333%;
+      top: 240px;
       width: 100%;
     }
   }
-  .slider--parmtop {
-    display: none;
-  }
-  .slider--desktop {
-    display: block;
-  }
+  // .slider--parmtop {
+  //   display: none !important;
+  // }
+  // .slider--desktop {
+  //   display: block !important;
+  // }
   .slider__img {
     height: 610px;
     width: 100%;
@@ -484,7 +497,7 @@ li {
   margin: 0 auto;
   padding: 40px 20px;
   position: relative;
-  top: -50px;
+  top: -75px;
   width: 89.3%;
 }
 
@@ -543,6 +556,7 @@ li {
   .newsWrapper {
     padding-left: 70px;
     padding-right: 70px;
+    top: -115px;
     width: 64%;
   }
   .newsContainer {
