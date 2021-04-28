@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="reset.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
@@ -21,16 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
     <title>KAGU</title>
   </head>
 
@@ -41,7 +33,12 @@
       <div class="overlay"></div>
       <div class="headerInner">
         <div class="headerLogoArea">
-          <svg
+          <object
+            type="image/svg+xml"
+            data="img/logo.svg"
+            class="header__logo"
+          ></object>
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             width="109"
@@ -55,7 +52,7 @@
               height="19"
               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAATCAYAAACa0IPnAAAElklEQVRoge2ZeYhVVRzHPzOlbTZMU2aRlYaVSIUURROYUTgRtlgWtElBQbZOG1iBpRVF00YLttIiNmhGiBVTf4wzklYGLWK0TxEVVFMWZqWSGT/ud/LO/Z27vPvePCr8wGXmnd/vnHfu+Z3zW85rGDf/JbbxDw2Jpdjyb1yaRmCNJpd85jjtMGcCvwb6DzxLgT2CPfM5PzDe9TV47x2Ak4H7gBXATxr7r8RjbWuBXuAh4AxgFzfaYJYE5rxFY1TCnMAY9ry5fRUvPhzoANqdJOI34BrgCScpxgTg0YDmnTZxYKWT5NMEzAIuBXYr2Mf0Juu5AlgPzAfuAL512nWgseRX7AsszzDYW8DEKgxmu3lxyq62jbaoxOltBT4CbqrAYCFGAJcBHwMXBORDTpmT1gZ0Ars7CWwGbtUu/NNJi/OITloa+wDPASfJneVhY70G7Jqi96U2yXvAd8AmGXY8MEXvnIx3ZrxntLHmuRGHkEqMth0wG7g58ALG58B5wNtOUhkXAzMK9GjTqbndSTwdGQazMe5KMf4rwL3yGmbUkU4DbgFelLHrQlGjjdTOnuIkEY8D18nfV8NEBfwkPytGjk60z1V863Y9tmIh4ETXGtGtGJnH+8CBOTp1o0hMa5XbCBmsHzgVuKQGBmvSbt7RSaLEYUYgBW/UZtrb9Rg8btrm/MC1/AdIexnkAq8G7s7QsxPwoWstx1PAuEDPTiUexv3AtQn5KGAhcLxiai1o1rsXxRKvV+tl7jRjGFcWyLIO0oRP0d+yXAVMD/T9Brg89tnij8WyQxJ6xwK3SV4LmhWrivJAPY2W5R6LpsWWei8DTneSYhwF3JOiaSn1L7HPG1Vwb3KacKOyyf89WUaLs1lB/zjdECTZCXihQpditADPA8OcJHKFy1wrrFYGG2IBsF+gvVIsPj+beBYWHCOUhdaULPc4QJ9294D7OwboAsYm9Bq10GOUSebFlwYtyv5OEsXJLFdnJ3MqMCnR3qL4Nzl2Gje43ltpdi0RPwIXJtosITvbaUbE0/0fnDRilGvJZq8U6Ya8k/ak0vB4vPoEOBp4x2lHtOv07Owkg5ml+78QwxUjelOe7pTiHs2tI/6SOp0hztHdaR5jcgrortj/K5w0Yryu9YowKaNWXWW3/GsCgd14MOOaChllUcbCr1KC0u8k0aR6VLAPFdNV9KLkpSsjHFhJ87Iuz/t1Skcom7UkZ5oumUM8BsyMtZv3ehc4NKCL6soF2vRfA79rbDuJhwGn6WI6NNd1Nm6W0eYWuOm3RX84Mek4Xyg5+DTWtqeK1azaqhbYCx4u926cBTydcp9ZlnnKfJOhYLQ2SWhdy7JWxlxezS0/mqwVvl+l3CwcALyh3bNSRu5MMdh6bZIytdYNgZjRpOSoVS5yseYyW64nz31n0aMSoydFx0qVI1VTtmujluUPxX5bm+9tjGpPWpxzdYEaygQ3aqEmZIx5kQrsMkyVewuRdF/I9bUpGz5C8aYl0BddfPfJdb6u+8g+p5XOMBX+J6i8OTgjyUAlzmdyn706seviCtt+ufbEL8OH+pfryr8L+Bu0gggHjue0XwAAAABJRU5ErkJggg=="
             />
-          </svg>
+          </svg> -->
         </div>
         <nav>
           <ul class="headerMenu">
@@ -326,11 +323,8 @@
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
     ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-    ></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
 
-    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
   </body>
 </html>
