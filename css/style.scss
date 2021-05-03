@@ -1,6 +1,9 @@
 // compileExpanded: style.css
 
 // q_ハンバーガー展開時のロゴの色を変更
+// q_ハンバーガーメニューの横幅
+// q_1500px以上の対応
+// q_リファクタリング
 
 //*----------------------------------------*//
 //*
@@ -99,6 +102,7 @@ li {
 
 .sectionWrapper {
   margin: 0 auto;
+  max-width: 1500px;
   padding: 40px 20px 40px;
 }
 @include responsive(lg) {
@@ -136,20 +140,17 @@ li {
 //*----------------------------------------*
 
 .header {
+  display: flex;
+  justify-content: center;
   // background-color: #fff;
   margin: 0 auto;
+  max-width: 1500px;
   // padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   // padding-top: 22px;
   position: relative;
   z-index: 2;
-}
-
-.open .header {
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
 }
 
 // .headerContainer {
@@ -161,11 +162,19 @@ li {
   display: flex;
   justify-content: space-between;
   position: relative;
-  // z-index: 200;
+  width: 100%;
 }
 
 .open .headerInner {
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 520px;
+  position: fixed;
+  width: calc(100% - 40px);
+}
+
+.open .header {
+  position: fixed;
 }
 
 .burgerBtnArea {
@@ -246,13 +255,18 @@ li {
   opacity: .9;
 }
 .header__logo {
-  fill: #fff;
-  transition: .3s;
-  z-index: 3;
+}
+
+.header__logo--white {
+  display: none;
 }
 
 .open .header__logo {
-  fill: #fff; //q open時ロゴの色変えたい
+  display: none; //q open時ロゴの色変えたい
+}
+
+.open .header__logo--white {
+  display: inline;
 }
 
 .headerLogoArea {
@@ -376,8 +390,8 @@ li {
   // z-index: 200;
 }
 
-//*  responsive(lg)
-@include responsive(lg) {
+//*  responsive(xl)
+@include responsive(xl) {
   .header {
     padding: 0;
   }
@@ -424,6 +438,9 @@ li {
 }
 
 .mainVisual {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
   position: relative;
   &__message {
     color: #fff;
@@ -436,7 +453,7 @@ li {
     position: absolute;
     text-shadow: 0 0 20px rgba(0, 0, 0, .2);
     top: 100px;
-    width: 210px;
+    width: 240px;
     z-index: 1;
   }
 }
@@ -498,7 +515,9 @@ li {
     display: block !important;
   }
 }
-
+.message--newLine {
+  display: block;
+}
 @include responsive(lg) {
   .mainVisual {
     &__message {
@@ -512,6 +531,9 @@ li {
   .slider__img {
     height: 610px;
     width: 100%;
+  }
+  .message--newLine {
+    display: none;
   }
 }
 //*----------------------------------------*
@@ -534,6 +556,7 @@ li {
 .news {
   &__article {
     margin-bottom: 30px;
+    min-width: 220px;
   }
   &__inner {
     display: flex;
@@ -548,13 +571,16 @@ li {
   &__classification {
     background-color: #24a2b3;
     color: #fff;
+    display: inline-block;
     @include rem(11);
     letter-spacing: .05em;
-    line-height: 20px;
-    padding-left: 11px;
-    padding-right: 11px;
+    line-height: 1;
+    // vertical-align: middle;
+    padding: 5px 10px;
+    // line-height: 20px;
+    // padding-left: 11px;
+    // padding-right: 11px;
     text-align: center;
-    vertical-align: middle;
   }
   &__details {
     font-weight: 500;
@@ -579,6 +605,7 @@ li {
 
 @include responsive(xl) {
   .newsWrapper {
+    max-width: 960px;
     padding-left: 70px;
     padding-right: 70px;
     top: -110px;
@@ -682,6 +709,10 @@ li {
 //*----------------------------------------*
 .shop {
   background-color: #f7f6f5;
+  &__img {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .shop__title {
@@ -796,7 +827,9 @@ li {
     &--large {
       @include rem(14);
       letter-spacing: .05em;
-      padding-bottom: 31px;
+      margin-bottom: 31px;
+      // padding-bottom: 31px;
+      position: relative;
     }
     &--small {
       @include rem(13);
@@ -883,6 +916,9 @@ li {
 
 @include responsive(lg) {
   .footer {
+    // &__navlist {
+    //   margin-left: 80px;
+    // }
     &__navItem {
       padding-bottom: 25px;
       padding-top: 0;
@@ -893,7 +929,7 @@ li {
         display: none;
       }
       &--large {
-        padding-bottom: 18px;
+        margin-bottom: 18px;
       }
       &--small {
         padding-bottom: 14px;
@@ -912,7 +948,7 @@ li {
     display: none;
   }
   .overview {
-    flex-basis: 74.2%;
+    flex: 50 1 auto; //flex-grow:50は親要素の余白を埋める最大幅をとるためで、50に意味はなし
     text-align: left;
     &__tel {
       padding-bottom: 0;
@@ -920,6 +956,15 @@ li {
         display: none;
       }
     }
+  }
+  .footer__navList:first-of-type {
+    flex: 0 1 15.2%;
+    min-width: 195px;
+  }
+
+  .footer__navList:last-of-type {
+    flex: 0 1 10.5%;
+    min-width: 135px;
   }
   .copyRight {
     flex-direction: row-reverse;

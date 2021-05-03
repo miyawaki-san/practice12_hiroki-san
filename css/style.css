@@ -23,6 +23,7 @@ li {
 
 .sectionWrapper {
   margin: 0 auto;
+  max-width: 1500px;
   padding: 40px 20px 40px;
 }
 
@@ -55,17 +56,18 @@ li {
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 auto;
+  max-width: 1500px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
   z-index: 2;
-}
-
-.open .header {
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
 }
 
 .headerInner {
@@ -76,6 +78,7 @@ li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  width: 100%;
 }
 
 .open .headerInner {
@@ -83,6 +86,14 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0 auto;
+  max-width: 520px;
+  position: fixed;
+  width: calc(100% - 40px);
+}
+
+.open .header {
+  position: fixed;
 }
 
 .burgerBtnArea {
@@ -164,15 +175,16 @@ li {
   opacity: .9;
 }
 
-.header__logo {
-  fill: #fff;
-  -webkit-transition: .3s;
-  transition: .3s;
-  z-index: 3;
+.header__logo--white {
+  display: none;
 }
 
 .open .header__logo {
-  fill: #fff;
+  display: none;
+}
+
+.open .header__logo--white {
+  display: inline;
 }
 
 .headerLogoArea {
@@ -313,7 +325,7 @@ li {
   display: block;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1024px) {
   .header {
     padding: 0;
   }
@@ -359,6 +371,9 @@ li {
 }
 
 .mainVisual {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
   position: relative;
 }
 
@@ -375,7 +390,7 @@ li {
   position: absolute;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   top: 100px;
-  width: 210px;
+  width: 240px;
   z-index: 1;
 }
 
@@ -421,6 +436,10 @@ li {
   }
 }
 
+.message--newLine {
+  display: block;
+}
+
 @media screen and (min-width: 960px) {
   .mainVisual__message {
     font-size: 36px;
@@ -434,6 +453,9 @@ li {
   .slider__img {
     height: 610px;
     width: 100%;
+  }
+  .message--newLine {
+    display: none;
   }
 }
 
@@ -458,6 +480,7 @@ li {
 
 .news__article {
   margin-bottom: 30px;
+  min-width: 220px;
 }
 
 .news__inner {
@@ -477,15 +500,14 @@ li {
 .news__classification {
   background-color: #24a2b3;
   color: #fff;
+  display: inline-block;
   font-size: 11px;
   /*IE9以前に対応する*/
   font-size: 0.6875rem;
   letter-spacing: .05em;
-  line-height: 20px;
-  padding-left: 11px;
-  padding-right: 11px;
+  line-height: 1;
+  padding: 5px 10px;
   text-align: center;
-  vertical-align: middle;
 }
 
 .news__details {
@@ -514,6 +536,7 @@ li {
 
 @media screen and (min-width: 1024px) {
   .newsWrapper {
+    max-width: 960px;
     padding-left: 70px;
     padding-right: 70px;
     top: -110px;
@@ -647,6 +670,11 @@ li {
   background-color: #f7f6f5;
 }
 
+.shop__img {
+  height: auto;
+  width: 100%;
+}
+
 .shop__title {
   font-weight: 500;
   font-size: 20px;
@@ -769,7 +797,8 @@ li {
   /*IE9以前に対応する*/
   font-size: 0.875rem;
   letter-spacing: .05em;
-  padding-bottom: 31px;
+  margin-bottom: 31px;
+  position: relative;
 }
 
 .footer__navItem--small {
@@ -892,7 +921,7 @@ li {
     display: none;
   }
   .footer__navItem--large {
-    padding-bottom: 18px;
+    margin-bottom: 18px;
   }
   .footer__navItem--small {
     padding-bottom: 14px;
@@ -914,8 +943,9 @@ li {
     display: none;
   }
   .overview {
-    -ms-flex-preferred-size: 74.2%;
-        flex-basis: 74.2%;
+    -webkit-box-flex: 50;
+        -ms-flex: 50 1 auto;
+            flex: 50 1 auto;
     text-align: left;
   }
   .overview__tel {
@@ -923,6 +953,18 @@ li {
   }
   .overview__tel::after {
     display: none;
+  }
+  .footer__navList:first-of-type {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 15.2%;
+            flex: 0 1 15.2%;
+    min-width: 195px;
+  }
+  .footer__navList:last-of-type {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 10.5%;
+            flex: 0 1 10.5%;
+    min-width: 135px;
   }
   .copyRight {
     -webkit-box-orient: horizontal;

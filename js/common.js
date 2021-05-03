@@ -24,6 +24,20 @@ $(function() {
   });
 
 
+  //ウインドウ幅1024px以上でコンパクトメニューは強制終了
+  var timer = false;
+  $(window).resize(function(){
+    if (timer !== false){
+      clearTimeout(timer);
+    }
+    timer = setTimeout(function(){
+    var windowWidth = window.innerWidth;
+    if (windowWidth >= 1024){
+      $('#header').removeClass('open');
+    }
+  },200);
+});
+
 $('.burgerBtnArea').on('click',function(){
   $('#header').toggleClass('open');
 });
@@ -44,7 +58,6 @@ $(function(){
     
     if ($('#header').hasClass('open')) {
       $('#header').removeClass('open');
-      console.log("aa")
     }
     return false;
     
