@@ -103,20 +103,30 @@ li {
 .sectionWrapper {
   margin: 0 auto;
   max-width: 1500px;
-  padding: 40px 20px 40px;
-}
-@include responsive(lg) {
-  .sectionWrapper {
-    padding: 80px 7.33333% 100px;
-  }
+  padding-bottom: 39px;
+  padding-left: 20px;
+  padding-right: 20px;
+  // padding: 40px 20px 40px;
+  padding-top: 30px;
 }
 
 .sectionTitle {
   font-weight: 600;
   @include rem(20);
   letter-spacing: .15em;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   text-align: center;
+}
+
+@include responsive(lg) {
+  .sectionWrapper {
+    padding: 80px 7.33333% 100px;
+  }
+  .sectionTitle {
+    font-weight: 400;
+    @include rem(24);
+    margin-bottom: 11px;
+  }
 }
 
 .englishSectionTitle {
@@ -125,7 +135,6 @@ li {
   font-weight: bold;
   @include rem(14);
   letter-spacing: .05em;
-  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -188,7 +197,7 @@ li {
   height: 2px;
   position: absolute;
   // position: relative;
-  right: 0;
+  right: -5px;
   // right: 0;
   top: 30px;
   // top: 8px;
@@ -267,6 +276,7 @@ li {
 
 .open .header__logo--white {
   display: inline;
+  width: 109px;
 }
 
 .headerLogoArea {
@@ -372,8 +382,8 @@ li {
   position: relative;
   &::before, &::after {
     position: absolute;
-    right: -30px;
-    top: 20px;
+    right: -26px;
+    top: 16px;
   }
   &::before {
     border-color: #333;
@@ -419,14 +429,26 @@ li {
       }
     }
   }
-  .arrowIcon {
+  // .arrowIcon {
+  //   &::before, &::after {
+  //     width: 0;
+  //   }
+  // }
+
+  .arrowIcon--menu {
     &::before, &::after {
-      width: 0;
+      display: none;
     }
   }
   .headerMenu__btn {
     line-height: 80px;
     width: 195px;
+    &--onlinestore {
+      width: 193px;
+    }
+    &--contact {
+      width: 177px;
+    }
   }
 }
 
@@ -447,12 +469,13 @@ li {
     font-family: "Noto Serif JP", sans-serif;
     font-weight: 500;
     @include rem(24);
+    left: -7px;
     letter-spacing: .2em;
     line-height: 36px;
     padding-left: 30px;
     position: absolute;
     text-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    top: 100px;
+    top: 91px;
     width: 240px;
     z-index: 1;
   }
@@ -539,13 +562,22 @@ li {
 //*----------------------------------------*
 //*  news
 //*----------------------------------------*
+.hp-margin--news {
+  margin-bottom: 29px;
+}
+
 .newsWrapper {
   background-color: #fcfcfc;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin-bottom: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 34px;
   position: relative;
   top: -70px;
-  width: 89.3%;
+  width: 90%;
 }
 
 .newsContainer {
@@ -555,32 +587,36 @@ li {
 
 .news {
   &__article {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
     min-width: 220px;
   }
   &__inner {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 9px;
   }
   &__date {
     font-family: "Quicksand", sans-serif;
-    font-weight: bold;
+    @include rem(14);
+    // font-weight: bold;
     letter-spacing: .05em;
-    margin-right: 20px;
+    margin-right: 17px;
   }
   &__classification {
     background-color: #24a2b3;
     color: #fff;
     display: inline-block;
     @include rem(11);
-    letter-spacing: .05em;
+    letter-spacing: .15em;
     line-height: 1;
     // vertical-align: middle;
-    padding: 5px 10px;
+    padding: 4px 10px;
     // line-height: 20px;
     // padding-left: 11px;
     // padding-right: 11px;
     text-align: center;
+    transform: translateY(
+      -2px
+    ); //q_dateとの上下合わせ。他にいいあわせ方あるか。
   }
   &__details {
     font-weight: 500;
@@ -597,17 +633,40 @@ li {
   font-weight: bold;
   @include rem(14);
   letter-spacing: .1em;
-  line-height: 50px;
+  line-height: 1;
   margin: 0 auto;
+  padding: 17px 0;
   text-align: center;
   width: 220px;
+}
+
+@include responsive(lg) {
+  .hp-margin--news {
+    margin-bottom: 57px;
+  }
+  .news {
+    &__date {
+      margin-right: 18spx;
+    }
+    &__inner {
+      margin-bottom: 14px;
+    }
+    &__article {
+      margin-bottom: 47px;
+    }
+    &__details {
+      letter-spacing: .1em;
+    }
+  }
 }
 
 @include responsive(xl) {
   .newsWrapper {
     max-width: 960px;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-bottom: 83px;
+    padding-left: 79px;
+    padding-right: 79px;
+    padding-top: 71px;
     top: -110px;
     width: 64%;
   }
@@ -615,10 +674,11 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 9px;
   }
   .news {
     &__article {
-      width: 40%;
+      width: 46%;
     }
   }
 }
@@ -626,6 +686,10 @@ li {
 //*----------------------------------------*
 //*  furniture
 //*----------------------------------------*
+.hp-margin--furniture {
+  height: 57px;
+}
+
 .furniture {
   background-color: #fff;
 }
@@ -633,23 +697,30 @@ li {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.furnitureContainer:not(:last-of-type) {
   margin-bottom: 60px;
+}
+
+.furnitureContainer--3column .furniture__details {
+  margin-bottom: 22px;
 }
 
 .furniture {
   &__howToFind {
     font-weight: 500;
     @include rem(20);
-    letter-spacing: .05em;
-    margin-bottom: 40px;
-    margin-top: 28px;
+    letter-spacing: .1em;
+    margin-bottom: 17px;
+    margin-top: 23px;
   }
   &__details {
     font-weight: 400;
     @include rem(15);
-    letter-spacing: .05em;
+    letter-spacing: .15em;
     line-height: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 52px;
   }
   &__img {
     height: auto;
@@ -658,6 +729,12 @@ li {
 }
 
 @include responsive(sm) {
+  .hp-margin--furniture {
+    height: 62px;
+  }
+  .furnitureContainer:not(:last-of-type) {
+    margin-bottom: 78px;
+  }
   .furnitureWrapper {
     padding: 80px 7.33333%;
   }
@@ -672,14 +749,26 @@ li {
     flex-direction: row-reverse;
   }
   .furnitureTextWrapper {
-    width: 48%;
+    width: 47.6%;
+  }
+  .furnitureContainer--3column .furniture__howToFind {
+    @include rem(20);
+    margin-bottom: 7px;
+  }
+  .furnitureContainer--3column .furniture__details {
+    margin-bottom: 53px;
+  }
+  .furnitureContainer--3column .furnitureContainer {
+    margin-bottom: 0;
   }
   .furniture {
     &__howToFind {
       @include rem(24);
+      margin-top: 44px;
+      transform: translateY(-10px);
     }
     &__img {
-      width: 48%;
+      width: 47.6%;
     }
   }
 }
@@ -707,6 +796,7 @@ li {
 //*----------------------------------------*
 //*  shop
 //*----------------------------------------*
+
 .shop {
   background-color: #f7f6f5;
   &__img {
@@ -718,16 +808,16 @@ li {
 .shop__title {
   font-weight: 500;
   @include rem(20);
-  letter-spacing: .05em;
-  margin-bottom: 29px;
-  margin-top: 29px;
+  letter-spacing: .1em;
+  margin-bottom: 17px;
+  margin-top: 22px;
 }
 .shop__text {
   font-weight: 400;
   @include rem(15);
   letter-spacing: .05em;
   line-height: 2em;
-  margin-bottom: 39px;
+  margin-bottom: 27px;
 }
 .shop__link {
   display: inline-block;
@@ -735,8 +825,8 @@ li {
   letter-spacing: .05em;
 }
 
-.mb60 {
-  margin-bottom: 60px;
+.hp-margin--shop {
+  margin-bottom: 55px;
 }
 
 .shopContainer {
@@ -745,22 +835,39 @@ li {
 }
 
 @include responsive(lg) {
+  .hp-margin--shop {
+    margin-bottom: 0;
+  }
   .shopContainer {
     flex-direction: row;
   }
+  .shopContainer:not(:last-of-type) {
+    margin-bottom: 61px;
+  }
   .shop__title {
-    margin-top: 0;
+    margin-top: -5px;
   }
   .shop__img {
     height: 200px;
     margin-right: 70px;
     width: 375px;
   }
+  .shop__text {
+    margin-bottom: 47px;
+  }
 }
 
 //*----------------------------------------*
 //*  recruit
 //*----------------------------------------*
+.hp-margin26 {
+  margin-bottom: 26px;
+}
+
+.hp-margin--recruit {
+  margin-top: 0;
+}
+
 .recruit {
   background-image: url(../img/recruit_bg-desktop.jpg);
   background-position: center;
@@ -769,7 +876,7 @@ li {
   &__detail {
     letter-spacing: .2em;
     line-height: 2em;
-    margin-bottom: 30px;
+    margin-bottom: 17px;
     text-align: center;
   }
 }
@@ -777,8 +884,13 @@ li {
 @include responsive(lg) {
   .recruit {
     &__detail {
-      margin-bottom: 60px;
+      letter-spacing: .26em;
+      margin-bottom: 54px;
+      padding-top: 15px;
     }
+  }
+  .hp-margin--recruit {
+    margin-top: -7px;
   }
 }
 
@@ -804,10 +916,13 @@ li {
   color: $colorWhite;
 
   &__logo {
-    margin-bottom: 20px;
+    margin-bottom: 7px;
+    &--large {
+      display: none;
+    }
   }
   &__navItem {
-    padding: 20px 0;
+    padding: 15px 0;
     position: relative;
     // border-bottom: 1px solid #555;
     &::after {
@@ -827,18 +942,18 @@ li {
     &--large {
       @include rem(14);
       letter-spacing: .05em;
-      margin-bottom: 31px;
+      margin-bottom: 26px;
       // padding-bottom: 31px;
       position: relative;
     }
     &--small {
       @include rem(13);
       letter-spacing: .05em;
-      &:first-of-type {
-        padding-bottom: 20px;
+      &:nth-of-type(2) {
+        padding-bottom: 14px;
       }
       &:last-of-type {
-        padding-bottom: 10px;
+        padding-bottom: 17px;
       }
     }
   }
@@ -868,8 +983,8 @@ li {
   &__adress {
     @include rem(14);
     letter-spacing: .05em;
-    line-height: 2em;
-    margin-bottom: 30px;
+    line-height: 1.9em;
+    margin-bottom: 20px;
   }
   &__tel {
     // border-bottom: 1px #555 solid;
@@ -877,7 +992,7 @@ li {
     @include rem(24);
     letter-spacing: .05em;
     line-height: 1em;
-    padding-bottom: 30px;
+    padding-bottom: 27px;
     position: relative;
     &::before {
       content: "TEL.";
@@ -907,20 +1022,25 @@ li {
   flex-direction: column;
   @include rem(12);
   letter-spacing: .05em;
-  padding-top: 20px;
+  // padding-top: 20px;
   text-align: center;
   &__text {
-    padding-top: 30px;
+    padding-top: 27px;
   }
 }
 
 @include responsive(lg) {
   .footer {
-    // &__navlist {
-    //   margin-left: 80px;
-    // }
+    padding-top: 61px;
+    &__logo {
+      display: none;
+      &--large {
+        display: block;
+        margin-bottom: 24px;
+      }
+    }
     &__navItem {
-      padding-bottom: 25px;
+      padding-bottom: 15px;
       padding-top: 0;
       &:last-of-type {
         padding-bottom: 0;
@@ -929,12 +1049,16 @@ li {
         display: none;
       }
       &--large {
-        margin-bottom: 18px;
+        margin-bottom: 12px;
       }
       &--small {
         padding-bottom: 14px;
-        &:last-of-type {
-          padding-bottom: 0;
+        padding-left: 10px;
+        // &:last-of-type {
+        //   padding-bottom: 0;
+        // }
+        &:nth-of-type(2) {
+          padding-bottom: 9px;
         }
       }
     }
@@ -942,7 +1066,7 @@ li {
   .footerInner {
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 100px;
+    padding-bottom: 90px;
   }
   .arrowIcon--footer {
     display: none;
