@@ -41,8 +41,8 @@
             type="image/svg+xml"
             data="img/logo.svg"
             class="header__logo"
-          ></object>
-          <object
+          ></object
+          ><object
             type="image/svg+xml"
             data="img/logo_white.svg"
             class="header__logo--white"
@@ -110,9 +110,10 @@
       </div>
 
       <!-- news -->
+
       <section class="news newsWrapper" id="news">
         <h2 class="sectionTitle">お知らせ</h2>
-        <p class="englishSectionTitle">NEWS</p>
+        <p class="englishSectionTitle hp-margin--news">NEWS</p>
         <div class="newsContainer">
           <div class="news__article">
             <div class="news__inner">
@@ -153,7 +154,7 @@
       <!-- furniture -->
       <section class="furniture sectionWrapper" id="furniture">
         <h2 class="sectionTitle">取扱い家具</h2>
-        <p class="englishSectionTitle">FURNITURE</p>
+        <p class="englishSectionTitle hp-margin--furniture">FURNITURE</p>
         <div class="furnitureContainer">
           <img src="img/img_furniture_01.jpg" alt="" class="furniture__img" />
           <div class="furnitureTextWrapper">
@@ -219,7 +220,7 @@
               KAGUの販売店をご覧いただけます。<br />
               また、KAGUの家具は全国のショールームにてご覧いただけます。
             </p>
-            <p class="shop__link arrowIcon arrowIcon--shop mb60">
+            <p class="shop__link arrowIcon arrowIcon--shop hp-margin--shop">
               販売店・展示場一覧を見る
             </p>
           </div>
@@ -240,8 +241,9 @@
 
       <!-- recruit -->
       <section class="recruit sectionWrapper" id="recruit">
+        <div class="hp-margin--recruit"></div>
         <h2 class="sectionTitle">採用情報</h2>
-        <p class="englishSectionTitle">RECRUIT</p>
+        <p class="englishSectionTitle hp-margin26">RECRUIT</p>
         <p class="recruit__detail">
           KAGUの新卒・中途採用情報を掲載しております。<br />
           アルバイト情報についても掲載しております。
@@ -254,7 +256,17 @@
     <footer class="footer sectionWrapper">
       <div class="footerInner">
         <div class="overview">
-          <svg
+          <object
+            type="image/svg+xml"
+            data="img/footer_logo.svg"
+            class="footer__logo"
+          ></object>
+          <object
+            type="image/svg+xml"
+            data="img/footer_logo_large.svg"
+            class="footer__logo--large"
+          ></object>
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             width="109"
@@ -268,7 +280,7 @@
               height="17"
               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAARCAYAAADXGCLsAAAEo0lEQVRYhd2Ze4hVVRSHv3GcUss0q3/MwrDXiCQZYQ+IoDB6UAQRRQSWlD0tKpIiBdFiwiythqIirIgwFYoe/0RgD5WCTMwUKsMeZq+xmkpN018szxrO7ax9zr1znRHrgw2XvR773LP3WnvvdVokbSTNXcCSpOTfnA88AgwKkoxlwG3Ab0FSn0uABQWtu4GXm/BVZBxwDnAq0A4cCRwOtLreduB34DtgLfAJ8C7wAbA7eMuZCVwbemEdcEHoLecy4KGkVOVMlkRFGyipo9Ra2i7pTkkDKnxUtTGSfglepT8ktVfYVbU2STdJWhe8Ns4mSbMkjSgZZ36Jp9UJ3ao2OXhwBoRZbIxRHkHTS7Q/Bk4B5tVZlWUMBpYCwxPyg1x2cJBUY9G0Guj0380y0qPpc4+Gfc7AJgacBLzoqaTILqADmAXsDNLGsRc7vkLbXvozwBVBkma0p7bUMxtdwKvAKuB7/x9DgeM9hZ4eLGAEsBi4Hng6SPuTEHs5xfTYKmmOpN1BM+MzSadVhHujbUrwXM60Bn0uLvUgzZM0KGFT2yZK+jZYZuzwVL7P0mOjkzZS0jtBI6dT0pDEwL1tE3wvLLJF0o+hN3th9RZKS4lP4/2E/t62/WJPm+R7wVlBkp2szgNuBrYGae841E+rByasppacyNrc5oggyRlW4hNPh/85qva0Vt+bZgAtQZqxGVgTenuP+X8eOCZh+ZzvHcYTwI0FuR3VX/LFsytYV1N2SLID0O2htxxb1K+USvuaEHs5P4eeNF9JGpcI7960e5OepQ2Shtb4sRS8PmhlzC4Zb3jQzJmf0Lc2OmhWs3B/OfIfFnrSHA0s9zTaDHY6m52ws6i52i+4PVgKvqrkZHofcGHo/R9SNWm1/Anc4NWP7iCFQ4A3gOuCpJpRntpSzzEHWBF6s31oRujNeKEkxfaWbq/E1LbHKnwo9PQnIfYiyyUdWxO2J0n6OmjlPOgntlTI1zarTqwI1hkrveKSssOrLMuCVcZHhSP8AUEjZ1HCd1k7OVjnPFBjc3+QZvxU5z8V28zgIWNr1aT9Jekev58VHdoVYFWwyFnSwBVgQbDKWe+TUtXWBqucpwpjrQwaGX9LmtpAqe04SWuCdc7EGt1zgzTnUV+sqTFqm11jfg3WGa9bRJSF9q3A46E3x8pJiyr2kQ+Bi4EfggQud9v+5Bpgofs/w8tubSXjfQO8Bnzqz2v76RBPtWf6ft0arDKeTJxo3/StJMWXviVY4XmTF9IHe7XmROAiLyynTuzb9lRnwjzm1CsY41HYGSxzNkoaW7Bp96Jvf7NN0vhCBGzuwzGtMjS3JBMNs4gIFntHl/8HqiKtdqXW4w5gbsmBotsLq295kddW2NiglV3Ub2liU7cV+bDXF4ts8MJ1z2chOzBN83rhUUG7MXb4nazDC+NltPj/nu7P0CxbgGd9vK49f7gPvqf1cKl//0mlkZ0+IWcDVwZpxhTg7dDbGJbCrIidwl5w8aJsL9RepD3PBOAEr95biqotONgVwwoI9o7se5pdbWzx9fbb4BhPsfbtzsaya5KNVfsN0i76NimWnr/wC/t73vIrDvAPV3gbQOtZyPIAAAAASUVORK5CYII="
             />
-          </svg>
+          </svg> -->
           <p class="overview__adress">
             株式会社KAGU<br />
             愛知県名古屋市〇〇区〇〇町 XX-X
