@@ -844,6 +844,14 @@ li {
   text-align: center;
 }
 
+.recruit .englishSectionTitle {
+  color: #fff;
+}
+
+.recruit .detailsBtn {
+  border-color: #fff;
+}
+
 @media screen and (min-width: 960px) {
   .recruit__detail {
     letter-spacing: .26em;
@@ -853,14 +861,6 @@ li {
   .hp-margin--recruit {
     margin-top: -7px;
   }
-}
-
-.recruit .englishSectionTitle {
-  color: #fff;
-}
-
-.recruit .detailsBtn {
-  border-color: #fff;
 }
 
 .footer {

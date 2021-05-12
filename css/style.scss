@@ -364,7 +364,6 @@ li {
   display: block;
 }
 
-//*  responsive(xl)
 @include responsive(xl) {
   .header {
     padding: 0;
@@ -414,9 +413,6 @@ li {
 //*----------------------------------------*
 //*  mainVisual
 //*----------------------------------------*
-.main {
-  // background-color: red;
-}
 
 .mainVisual {
   margin-left: auto;
@@ -450,7 +446,7 @@ li {
 }
 
 .slider__img {
-  height: 360px; //q_100%で指定できない。
+  height: 360px;
   object-fit: cover;
   object-position: 70% 20%;
   position: relative;
@@ -549,9 +545,7 @@ li {
     line-height: 1;
     padding: 4px 10px;
     text-align: center;
-    transform: translateY(
-      -2px
-    ); //q_dateとの上下合わせ。他にいいあわせ方あるか。
+    transform: translateY(-2px);
   }
   &__details {
     font-weight: 500;
@@ -733,7 +727,7 @@ li {
 //*----------------------------------------*
 
 .shop {
-  background-color: #f7f6f5;
+  background-color: $colorBrown;
   &__img {
     height: auto;
     width: 100%;
@@ -816,19 +810,6 @@ li {
   }
 }
 
-@include responsive(lg) {
-  .recruit {
-    &__detail {
-      letter-spacing: .26em;
-      margin-bottom: 54px;
-      padding-top: 15px;
-    }
-  }
-  .hp-margin--recruit {
-    margin-top: -7px;
-  }
-}
-
 .recruit .englishSectionTitle {
   color: $colorWhite;
 }
@@ -839,6 +820,14 @@ li {
 
 @include responsive(lg) {
   .recruit {
+    &__detail {
+      letter-spacing: .26em;
+      margin-bottom: 54px;
+      padding-top: 15px;
+    }
+  }
+  .hp-margin--recruit {
+    margin-top: -7px;
   }
 }
 
