@@ -65,11 +65,9 @@ $colorBrown: #f7f6f5;
 $colorBrown2: #aa8f7b;
 $colorWhite: #fff;
 
-//*----------------------------------------*//
-//*
-//*  全体設定
-//*
-//*----------------------------------------*//
+/*-------------------------------------------
+/* 全体設定
+/*------------------------------------------*/
 
 html {
   font-size: 100%;
@@ -127,15 +125,9 @@ li {
   text-align: center;
 }
 
-//*----------------------------------------*//
-//*
-//*  個別設定
-//*
-//*----------------------------------------*//
-
-//*----------------------------------------*
-//*  hedder
-//*----------------------------------------*
+/*-------------------------------------------
+/* header
+/*------------------------------------------*/
 
 .header {
   display: flex;
@@ -146,6 +138,10 @@ li {
   padding-right: 20px;
   position: relative;
   z-index: 2;
+}
+
+.open .header {
+  position: fixed;
 }
 
 .headerInner {
@@ -161,10 +157,6 @@ li {
   max-width: 520px;
   position: fixed;
   width: calc(100% - 40px);
-}
-
-.open .header {
-  position: fixed;
 }
 
 .burgerBtnArea {
@@ -201,22 +193,35 @@ li {
 .open .burgerBtn {
   background-color: rgba(0, 0, 0, 0);
   transition: .3s;
+  &::before {
+    background-color: $colorWhite;
+    opacity: 1;
+    transform: translate(0, 8px) rotate(-315deg);
+    transition: .3s;
+    width: 20px;
+  }
+  &::after {
+    background-color: $colorWhite;
+    transform: translate(0, -8px) rotate(315deg);
+    transition: .3s;
+    width: 20px;
+  }
 }
 
-.open .burgerBtn::before {
-  background-color: $colorWhite;
-  opacity: 1;
-  transform: translate(0, 8px) rotate(-315deg);
-  transition: .3s;
-  width: 20px;
-}
+// .open .burgerBtn::before {
+//   background-color: $colorWhite;
+//   opacity: 1;
+//   transform: translate(0, 8px) rotate(-315deg);
+//   transition: .3s;
+//   width: 20px;
+// }
 
-.open .burgerBtn::after {
-  background-color: $colorWhite;
-  transform: translate(0, -8px) rotate(315deg);
-  transition: .3s;
-  width: 20px;
-}
+// .open .burgerBtn::after {
+//   background-color: $colorWhite;
+//   transform: translate(0, -8px) rotate(315deg);
+//   transition: .3s;
+//   width: 20px;
+// }
 
 .overlay {
   background: #978374;
@@ -364,7 +369,6 @@ li {
   display: block;
 }
 
-//*  responsive(xl)
 @include responsive(xl) {
   .header {
     padding: 0;
@@ -411,12 +415,9 @@ li {
   }
 }
 
-//*----------------------------------------*
-//*  mainVisual
-//*----------------------------------------*
-.main {
-  // background-color: red;
-}
+/*-------------------------------------------
+/* mainvisual
+/*------------------------------------------*/
 
 .mainVisual {
   margin-left: auto;
@@ -450,7 +451,7 @@ li {
 }
 
 .slider__img {
-  height: 360px; //q_100%で指定できない。
+  height: 360px;
   object-fit: cover;
   object-position: 70% 20%;
   position: relative;
@@ -499,9 +500,10 @@ li {
     display: none;
   }
 }
-//*----------------------------------------*
-//*  news
-//*----------------------------------------*
+/*-------------------------------------------
+/* news
+/*------------------------------------------*/
+
 .hp-margin--news {
   margin-bottom: 29px;
 }
@@ -549,9 +551,7 @@ li {
     line-height: 1;
     padding: 4px 10px;
     text-align: center;
-    transform: translateY(
-      -2px
-    ); //q_dateとの上下合わせ。他にいいあわせ方あるか。
+    transform: translateY(-2px);
   }
   &__details {
     font-weight: 500;
@@ -618,9 +618,10 @@ li {
   }
 }
 
-//*----------------------------------------*
-//*  furniture
-//*----------------------------------------*
+/*-------------------------------------------
+/* furniture
+/*------------------------------------------*/
+
 .hp-margin--furniture {
   height: 57px;
 }
@@ -728,12 +729,12 @@ li {
     margin: 0 auto;
   }
 }
-//*----------------------------------------*
-//*  shop
-//*----------------------------------------*
+/*-------------------------------------------
+/* shop
+/*------------------------------------------*/
 
 .shop {
-  background-color: #f7f6f5;
+  background-color: $colorBrown;
   &__img {
     height: auto;
     width: 100%;
@@ -792,9 +793,10 @@ li {
   }
 }
 
-//*----------------------------------------*
-//*  recruit
-//*----------------------------------------*
+/*-------------------------------------------
+/* recruit
+/*------------------------------------------*/
+
 .hp-margin26 {
   margin-bottom: 26px;
 }
@@ -816,6 +818,14 @@ li {
   }
 }
 
+.recruit .englishSectionTitle {
+  color: $colorWhite;
+}
+
+.recruit .detailsBtn {
+  border-color: $colorWhite;
+}
+
 @include responsive(lg) {
   .recruit {
     &__detail {
@@ -829,22 +839,10 @@ li {
   }
 }
 
-.recruit .englishSectionTitle {
-  color: $colorWhite;
-}
+/*-------------------------------------------
+/* footer
+/*------------------------------------------*/
 
-.recruit .detailsBtn {
-  border-color: $colorWhite;
-}
-
-@include responsive(lg) {
-  .recruit {
-  }
-}
-
-//*----------------------------------------*
-//*  footer
-//*----------------------------------------*
 .footer {
   background-color: #292929;
   color: $colorWhite;

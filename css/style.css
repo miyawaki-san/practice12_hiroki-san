@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*-------------------------------------------
+/* 全体設定
+/*------------------------------------------*/
 html {
   font-size: 100%;
 }
@@ -61,6 +64,9 @@ li {
   text-align: center;
 }
 
+/*-------------------------------------------
+/* header
+/*------------------------------------------*/
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,6 +80,10 @@ li {
   padding-right: 20px;
   position: relative;
   z-index: 2;
+}
+
+.open .header {
+  position: fixed;
 }
 
 .headerInner {
@@ -96,10 +106,6 @@ li {
   max-width: 520px;
   position: fixed;
   width: calc(100% - 40px);
-}
-
-.open .header {
-  position: fixed;
 }
 
 .burgerBtnArea {
@@ -383,6 +389,9 @@ li {
   }
 }
 
+/*-------------------------------------------
+/* mainvisual
+/*------------------------------------------*/
 .mainVisual {
   margin-left: auto;
   margin-right: auto;
@@ -473,6 +482,9 @@ li {
   }
 }
 
+/*-------------------------------------------
+/* news
+/*------------------------------------------*/
 .hp-margin--news {
   margin-bottom: 29px;
 }
@@ -607,6 +619,9 @@ li {
   }
 }
 
+/*-------------------------------------------
+/* furniture
+/*------------------------------------------*/
 .hp-margin--furniture {
   height: 57px;
 }
@@ -747,6 +762,9 @@ li {
   }
 }
 
+/*-------------------------------------------
+/* shop
+/*------------------------------------------*/
 .shop {
   background-color: #f7f6f5;
 }
@@ -822,6 +840,9 @@ li {
   }
 }
 
+/*-------------------------------------------
+/* recruit
+/*------------------------------------------*/
 .hp-margin26 {
   margin-bottom: 26px;
 }
@@ -844,6 +865,14 @@ li {
   text-align: center;
 }
 
+.recruit .englishSectionTitle {
+  color: #fff;
+}
+
+.recruit .detailsBtn {
+  border-color: #fff;
+}
+
 @media screen and (min-width: 960px) {
   .recruit__detail {
     letter-spacing: .26em;
@@ -855,14 +884,9 @@ li {
   }
 }
 
-.recruit .englishSectionTitle {
-  color: #fff;
-}
-
-.recruit .detailsBtn {
-  border-color: #fff;
-}
-
+/*-------------------------------------------
+/* footer
+/*------------------------------------------*/
 .footer {
   background-color: #292929;
   color: #fff;
